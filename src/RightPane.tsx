@@ -23,7 +23,7 @@ export class RightPane extends Component<{ conversation?: ConversationDto }> {
       channelId: this.props.conversation!.channelId,
       referenceTo: 0,
       contentType: 0,
-      content: text,
+      content: "T: text " + text,
     });
     return true;
   }

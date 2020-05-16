@@ -24,7 +24,7 @@ export class Login extends Component {
   render() {
     return (
       <div className="login">
-        <img src="logo512.png" width="256" />
+        <img src="logo512.png" width="256" alt = "logo"/>
         {this.state.register && (
           <TextInput
             type="text"
@@ -56,7 +56,7 @@ export class Login extends Component {
             ? "Switch back to "
             : "Have no account yet? Go and "}
           <a
-            href=""
+            href="register-login"
             onClick={(e) => {
               e.preventDefault();
               this.setState((state: { register: boolean }) => ({
