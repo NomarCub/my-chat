@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { proxy } from "./proxy";
+import { TextInput } from "./TextInput";
 
 export class Login extends Component {
   state = { email: "", password: "", displayName: "", register: false };
@@ -25,28 +26,27 @@ export class Login extends Component {
       <div className="login">
         <img src="logo512.png" width="256" />
         {this.state.register && (
-          <input
+          <TextInput
             type="text"
             placeholder="Display Name (Agent Smith)"
             value={this.state.displayName}
-            onChange={(e) => this.setState({ displayName: e.target.value })}
+            onChange={(e) => this.setState({ displayName: e })}
           />
         )}
-        <input
+        <TextInput
           type="email"
           placeholder="Email (someone@example.com)"
           value={this.state.email}
           onChange={(e) => {
-            this.setState({ email: e.target.value });
-            if (e.target.value === "TR2JRS")
-              this.setState({ displayName: "Feri" });
+            this.setState({ email: e });
+            if (e === "TR2JRS") this.setState({ displayName: "Feri" });
           }}
         />
-        <input
+        <TextInput
           type="password"
           placeholder="Password"
           value={this.state.password}
-          onChange={(e) => this.setState({ password: e.target.value })}
+          onChange={(e) => this.setState({ password: e })}
         />
         <button type="button" onClick={() => this.onClick()}>
           {this.state.register ? "Register" : "Login"}
