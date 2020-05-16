@@ -37,7 +37,7 @@ export class ConversationCard extends Component<{
           <span className="channel-name">{this.props.conversation.name}</span>
           <span className="time">
             {lastMessage &&
-              new Date(lastMessage.timeStamp).toLocaleTimeString()}
+              new Date(lastMessage.timeStamp).toLocaleDateString()}
           </span>
         </div>
         <span className="last-message">{lastMessage?.content}</span>
