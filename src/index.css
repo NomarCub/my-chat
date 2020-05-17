@@ -117,10 +117,6 @@ button:hover {
     flex: 1;
   }
 }
-.right-pane {
-  border: solid #aaa;
-  border-width: 0 0 0 1px;
-}
 .right-pane .conversation-header {
   padding: 6px 8px;
   font-weight: 500;
@@ -137,6 +133,10 @@ button:hover {
 @media (min-width: 650px) {
   .only-narrow {
     display: none;
+  }
+  .right-pane {
+    border: solid #aaa;
+    border-width: 0 0 0 1px;
   }
 }
 .messages {
