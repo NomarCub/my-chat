@@ -24,13 +24,16 @@ export class Login extends Component {
   render() {
     return (
       <div className="login">
-        <img src="logo512.png" width="256" alt = "logo"/>
+        <img src="logo512.png" width="256" alt="logo" />
         {this.state.register && (
           <TextInput
             type="text"
             placeholder="Display Name (Agent Smith)"
             value={this.state.displayName}
             onChange={(e) => this.setState({ displayName: e })}
+            key={this.state.displayName}
+            autofocus={true}
+            onEnter={() => this.onClick()}
           />
         )}
         <TextInput
@@ -41,12 +44,14 @@ export class Login extends Component {
             this.setState({ email: e });
             if (e === "TR2JRS") this.setState({ displayName: "Feri" });
           }}
+          onEnter={() => this.onClick()}
         />
         <TextInput
           type="password"
           placeholder="Password"
           value={this.state.password}
           onChange={(e) => this.setState({ password: e })}
+          onEnter={() => this.onClick()}
         />
         <button type="button" onClick={() => this.onClick()}>
           {this.state.register ? "Register" : "Login"}
